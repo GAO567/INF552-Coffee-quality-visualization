@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coffee Quality Visualization</title>
+    <script type="text/javascript" src="js/d3.v7.min.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+    <style>
+        body {
+            background-color: #f2e6d9;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 50px;
+            color: #48240a;
+            margin: 20px 0;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-between;
+        }
+        #world-map, #plot {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+          
+            background-color: #48240a;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            
+        }
+        #changemap {
+            float: right;
+        }
+        button:hover {
+            background-color: #59361f;
+        }
+        #world-map {
+            -webkit-user-select: none; /* Safari 3.1+ */
+            -moz-user-select: none; /* Firefox 2+ */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+        }
+        p {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+            color: #48240a;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body onload="createViz()">
+    <h1>Coffee Quality Visualization</h1>
+    
+    <div class="container">
+        <div id="world-map">    
+                <button id="changemap" onclick="changemap()">Map</button>
+        </div>
+        <div id="plot">
+            <button id="change" onclick="changechart()">Parallel Coordinates</button>
+
+        </div>
+    </div>
+    <p>Single click to select a country</p>
+    <p>Double click on the left chart to use brush, again to remove brush</p>
+    <p>Click on the button to change the chart</p>
+    <P>Left: Map/Grid</P>
+    <p>Right: ParrallelCoordinates/Boxplot</P>
+    
+</body>
+</html>
